@@ -1,0 +1,26 @@
+{
+	"name": "@dockyardmods/ui",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./src/lib/index.ts",
+			"svelte": "./src/lib/index.ts",
+			"default": "./src/lib/index.ts"
+		},
+		"./styles/*": "./src/lib/styles/*"
+	},
+	"scripts": {
+		"build": "pnpm check",
+		"check": "svelte-check --tsconfig ./tsconfig.json"
+	},
+	"peerDependencies": {
+		"svelte": "^5.0.0"
+	},
+	"devDependencies": {
+		"svelte": "^5.55.2",
+		"svelte-check": "^4.4.6",
+		"typescript": "^6.0.2"
+	}
+}
