@@ -1,0 +1,131 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"type": "object",
+	"properties": {
+		"manifestVersion": {
+			"type": "integer",
+			"const": 1
+		},
+		"name": {
+			"type": "string",
+			"minLength": 1
+		},
+		"summary": {
+			"type": "string",
+			"minLength": 1
+		},
+		"version": {
+			"type": "string",
+			"minLength": 1
+		},
+		"authors": {
+			"minItems": 1,
+			"type": "array",
+			"items": {
+				"type": "string",
+				"minLength": 1
+			}
+		},
+		"gameVersionId": {
+			"type": "string",
+			"minLength": 1
+		},
+		"packages": {
+			"minItems": 1,
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"url": {
+						"type": "string",
+						"minLength": 1,
+						"format": "uri"
+					},
+					"sha256": {
+						"type": "string",
+						"pattern": "^[A-Fa-f0-9]{64}$"
+					}
+				},
+				"required": ["url", "sha256"],
+				"additionalProperties": false,
+				"title": "Dockyard Mod Package"
+			}
+		},
+		"description": {
+			"type": "string",
+			"minLength": 1
+		},
+		"tags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"minLength": 1
+			}
+		},
+		"changelog": {
+			"type": "string",
+			"minLength": 1
+		},
+		"dependencies": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"id": {
+						"type": "string",
+						"pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+					},
+					"version": {
+						"type": "string",
+						"minLength": 1
+					}
+				},
+				"required": ["id", "version"],
+				"additionalProperties": false,
+				"title": "Dockyard Mod Dependency"
+			}
+		},
+		"license": {
+			"type": "string",
+			"minLength": 1
+		},
+		"media": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"type": {
+						"type": "string",
+						"enum": ["image", "video"]
+					},
+					"path": {
+						"type": "string",
+						"minLength": 1
+					},
+					"alt": {
+						"type": "string",
+						"minLength": 1
+					},
+					"thumbnailPath": {
+						"type": "string",
+						"minLength": 1
+					}
+				},
+				"required": ["type", "path"],
+				"additionalProperties": false,
+				"title": "Dockyard Mod Media"
+			}
+		}
+	},
+	"required": [
+		"manifestVersion",
+		"name",
+		"summary",
+		"version",
+		"authors",
+		"gameVersionId",
+		"packages"
+	],
+	"additionalProperties": false,
+	"title": "Dockyard Mod Manifest"
+}

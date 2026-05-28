@@ -1,0 +1,65 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"type": "object",
+	"properties": {
+		"$schema": {
+			"type": "string",
+			"const": "./schemas/registry.schema.json"
+		},
+		"version": {
+			"type": "integer",
+			"const": 1
+		},
+		"currentGameVersionId": {
+			"type": "string",
+			"minLength": 1
+		},
+		"mods": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"id": {
+						"type": "string",
+						"pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+					},
+					"version": {
+						"type": "string",
+						"minLength": 1
+					},
+					"repo": {
+						"type": "string",
+						"pattern": "^https:\\/\\/github\\.com\\/DockyardMods\\/[A-Za-z0-9_.-]+$"
+					},
+					"manifestPath": {
+						"type": "string",
+						"minLength": 1
+					},
+					"gameVersionId": {
+						"type": "string",
+						"minLength": 1
+					},
+					"certification": {
+						"type": "object",
+						"properties": {
+							"expiresAt": {
+								"type": "string",
+								"format": "date",
+								"pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+							}
+						},
+						"required": ["expiresAt"],
+						"additionalProperties": false,
+						"title": "Certification"
+					}
+				},
+				"required": ["id", "version", "repo", "manifestPath", "gameVersionId"],
+				"additionalProperties": false,
+				"title": "Dockyard Mod Entry"
+			}
+		}
+	},
+	"required": ["$schema", "version", "currentGameVersionId", "mods"],
+	"additionalProperties": false,
+	"title": "Dockyard Mod Registry"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "@dockyardmods/core",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"exports": {
+		".": "./src/index.ts",
+		"./registry": "./src/registry/index.ts",
+		"./manifest": "./src/manifest/index.ts",
+		"./schemas/registry.schema.json": "./schemas/registry.schema.json",
+		"./schemas/mod-manifest.schema.json": "./schemas/mod-manifest.schema.json"
+	},
+	"scripts": {
+		"check": "tsc --noEmit",
+		"lint": "eslint --fix .",
+		"fmt": "prettier --write ."
+	},
+	"dependencies": {
+		"try": "^1.0.3",
+		"yaml": "^2.8.2",
+		"zod": "^4.1.13"
+	},
+	"devDependencies": {
+		"@types/node": "^24.12.4"
+	}
+}

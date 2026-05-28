@@ -1,0 +1,47 @@
+name: Validate Registry
+
+on:
+  workflow_call:
+    inputs:
+      registry_path:
+        required: false
+        type: string
+        default: ./registry.json
+      tooling_ref:
+        required: false
+        type: string
+        default: main
+
+permissions:
+  contents: read
+
+jobs:
+  validate-registry:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out target repo
+        uses: actions/checkout@v4
+
+      - name: Check out tooling repo
+        uses: actions/checkout@v4
+        with:
+          repository: DockyardMods/dockyardmods
+          ref: ${{ inputs.tooling_ref }}
+          path: dockyardmods-tooling
+
+      - name: Set up tools with mise
+        uses: jdx/mise-action@v4
+        with:
+          cache: true
+          working_directory: dockyardmods-tooling
+
+      - name: Install tooling dependencies
+        working-directory: dockyardmods-tooling
+        run: pnpm install --frozen-lockfile
+
+      - name: Validate registry
+        working-directory: dockyardmods-tooling
+        env:
+          REGISTRY_PATH: ${{ github.workspace }}/${{ inputs.registry_path }}
+        run: node packages/scripts/src/lint-registry.ts "$REGISTRY_PATH"

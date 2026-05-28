@@ -4,16 +4,14 @@
 	"version": "0.0.0",
 	"type": "module",
 	"exports": {
-		".": {
-			"types": "./src/lib/index.ts",
-			"svelte": "./src/lib/index.ts",
-			"default": "./src/lib/index.ts"
-		},
-		"./styles/*": "./src/lib/styles/*"
+		"./*": {
+			"svelte": "./src/lib/*.svelte"
+		}
 	},
 	"scripts": {
-		"build": "pnpm check",
-		"check": "svelte-check --tsconfig ./tsconfig.json"
+		"check": "svelte-check --tsconfig ./tsconfig.json",
+		"lint": "eslint --fix .",
+		"fmt": "prettier --write ."
 	},
 	"peerDependencies": {
 		"svelte": "^5.0.0"
