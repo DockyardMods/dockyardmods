@@ -4,7 +4,7 @@
 	"properties": {
 		"$schema": {
 			"type": "string",
-			"const": "./schemas/registry.schema.json"
+			"const": "https://raw.githubusercontent.com/DockyardMods/dockyardmods/main/packages/core/schemas/registry.schema.json"
 		},
 		"version": {
 			"type": "integer",
