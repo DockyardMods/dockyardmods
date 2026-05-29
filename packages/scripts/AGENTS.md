@@ -1,0 +1,24 @@
+# Scripts Package Guidelines
+
+## Overview
+
+`packages/scripts` contains executable CLI entry points for Dockyard Mods registry and manifest maintenance. The scripts should stay thin and delegate domain behavior to `@dockyardmods/core`.
+
+- `src/lint-registry.ts` runs registry validation and reports issues.
+- `src/format-registry.ts` formats registry files.
+- `src/validate-manifest.ts` validates mod manifest files.
+- `src/generate-json-schemas.ts` generates JSON Schema artifacts from the core schemas.
+
+## Code Style
+
+- Keep TypeScript in strict mode and preserve type safety for CLI arguments, process exits, and core package results.
+- Keep files small. Add shared CLI helpers when multiple entry points need the same argument parsing or output behavior.
+- Keep code readable and operationally explicit. CLI files should make inputs, outputs, and exit behavior clear.
+- Add short JSDoc summaries to functions. Do not duplicate TypeScript type annotations in prose. Include `@throws` when a function can throw.
+- Prefer the `try` npm package over standard `try`/`catch` blocks for fallible operations.
+
+## Checks
+
+- `pnpm --filter @dockyardmods/scripts check`
+- `pnpm --filter @dockyardmods/scripts lint`
+- `pnpm --filter @dockyardmods/scripts fmt`
