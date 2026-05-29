@@ -11,6 +11,7 @@
 	"scripts": {
 		"dev:web": "pnpm --filter @dockyardmods/website dev",
 		"build:web": "pnpm --filter @dockyardmods/website build",
+		"generate:schemas": "pnpm --filter=@dockyardmods/scripts generate:schemas",
 		"check:web": "pnpm --filter @dockyardmods/website check",
 		"check:ui": "pnpm --filter @dockyardmods/ui check",
 		"check:core": "pnpm --filter @dockyardmods/core check",
