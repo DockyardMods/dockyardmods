@@ -5,6 +5,7 @@
 	"type": "module",
 	"exports": {
 		".": "./src/index.ts",
+		"./ecosystem": "./src/ecosystem/index.ts",
 		"./registry": "./src/registry/index.ts",
 		"./manifest": "./src/manifest/index.ts",
 		"./schemas/registry.schema.json": "./schemas/registry.schema.json",

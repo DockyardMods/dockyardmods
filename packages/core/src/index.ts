@@ -1,3 +1,10 @@
+export {
+	createDockyardEcosystemLayout,
+	getManifestPathForRegistryEntry,
+	readLocalEcosystem,
+	type DockyardEcosystemLayout,
+	type DockyardLocalEcosystem
+} from './ecosystem/index.ts';
 export { parseJsonFile } from './files/parse-json-file.ts';
 export { parseYamlFile } from './files/parse-yaml-file.ts';
 export { readTextFile } from './files/read-text-file.ts';

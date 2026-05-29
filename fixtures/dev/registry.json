@@ -1,0 +1,14 @@
+{
+	"$schema": "https://raw.githubusercontent.com/DockyardMods/dockyardmods/main/packages/core/schemas/registry.schema.json",
+	"version": 1,
+	"currentGameVersionId": "12267945",
+	"mods": [
+		{
+			"id": "mod-submission",
+			"version": "1.1.0",
+			"repo": "https://github.com/DockyardMods/mod-submission",
+			"manifestPath": "example-mod.yml",
+			"gameVersionId": "12267945"
+		}
+	]
+}

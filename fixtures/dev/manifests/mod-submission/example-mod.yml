@@ -1,0 +1,42 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/DockyardMods/dockyardmods/main/packages/core/schemas/mod-manifest.schema.json
+manifestVersion: 1
+
+# Core
+name: Mod submission
+version: 1.1.0
+authors:
+  - Example Author
+
+# Content
+summary: Short example text.
+description: Longer explanation of what the mod does.
+media:
+  - type: image
+    path: media/screenshot-1.webp
+    alt: In-port screenshot
+  - type: video
+    path: media/demo.mp4
+    thumbnailPath: media/demo-thumb.webp
+    alt: Video demoing minimap improvements.
+changelog: |
+  # v1.1.0
+
+  - Updated for the latest patch and fixed icon alignment.
+  - More changes listed
+
+  # v1.0.0
+
+  - Initial release
+
+# Meta info
+license: MIT
+gameVersionId: "12267945"
+tags:
+  - ui
+  - utility
+dependencies:
+  - id: example-mod-2
+    version: 1.0.0
+packages:
+  - url: https://github.com/DockyardMods/mod-submission/releases/download/v1.1.0/mod-submission.zip
+    sha256: a000000000000000000000000000000000000000000000000000000000000000
