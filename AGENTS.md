@@ -5,7 +5,7 @@
 Dockyard Mods is a pnpm monorepo for the Dockyard Mods website and shared tooling.
 
 - `apps/website` contains the SvelteKit static website. It depends on the shared UI package for reusable Svelte components.
-- `packages/core` contains reusable TypeScript domain code: registry and manifest schemas, types, parsers, formatters, linters, and generated JSON Schemas.
+- `packages/core` contains reusable TypeScript domain code: registry and manifest schemas, types, parsers, formatters, linters, and generated JSON Schemas. The registry is a JSON registry maintained at <https://github.com/DockyardMods/the-dockyard>. Mod manifests are YAML manifests; see <https://github.com/DockyardMods/mod-submission> for an example.
 - `packages/scripts` contains executable CLI wrappers for registry and manifest maintenance tasks.
 - `packages/ui` contains shared Svelte UI components for app workspaces.
 

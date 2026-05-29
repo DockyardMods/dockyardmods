@@ -2,7 +2,7 @@
 
 ## Overview
 
-`packages/core` is the shared TypeScript domain package for Dockyard Mods. It provides schema definitions, domain types, parsing, formatting, linting, and generated JSON Schema files used by other workspaces.
+`packages/core` is the shared TypeScript domain package for Dockyard Mods. It provides schema definitions, domain types, parsing, formatting, linting, and generated JSON Schema files used by other workspaces. The registry is a JSON registry maintained at <https://github.com/DockyardMods/the-dockyard>. Mod manifests are YAML manifests; see <https://github.com/DockyardMods/mod-submission> for an example.
 
 - `src/schemas` contains Zod schema definitions and schema constants.
 - `src/registry` contains registry parsing, formatting, and linting helpers.
