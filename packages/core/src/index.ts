@@ -1,5 +1,6 @@
-export { loadDataFile } from './data-file/load-data-file.ts';
-export { loadText } from './data-file/load-text.ts';
+export { parseJsonFile } from './files/parse-json-file.ts';
+export { parseYamlFile } from './files/parse-yaml-file.ts';
+export { readTextFile } from './files/read-text-file.ts';
 export { parseManifest } from './manifest/parse-manifest.ts';
 export { parseManifestFile } from './manifest/parse-manifest-file.ts';
 export { parseRegistry } from './registry/parse-registry.ts';

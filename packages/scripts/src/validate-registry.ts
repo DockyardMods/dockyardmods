@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { loadDataFile, registrySchema } from '@dockyardmods/core';
+import { parseJsonFile, registrySchema } from '@dockyardmods/core';
 import { t } from 'try';
 import { formatZodPath } from './format-zod-path.ts';
 
@@ -11,7 +11,7 @@ if (!registryPath || process.argv.length > 3) {
 	process.exit(2);
 }
 
-const registryResult = await t(() => loadDataFile(registryPath));
+const registryResult = await t(() => parseJsonFile(registryPath));
 
 if (!registryResult.ok) {
 	console.error('Unable to load registry.');

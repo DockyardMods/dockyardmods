@@ -7,7 +7,7 @@
 - `src/schemas` contains Zod schema definitions and schema constants.
 - `src/registry` contains registry parsing and linting helpers.
 - `src/manifest` contains mod manifest parsing helpers.
-- `src/data-file` contains shared file-loading utilities.
+- `src/files` contains shared local file reading and explicit JSON/YAML parsing utilities.
 - `schemas` contains generated JSON Schema artifacts exported by the package.
 
 ## Code Style

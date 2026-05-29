@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { writeFile } from 'node:fs/promises';
-import { loadDataFile, registrySchema } from '@dockyardmods/core';
+import { parseJsonFile, registrySchema } from '@dockyardmods/core';
 import { t } from 'try';
 import { formatRegistry } from './format-registry-content.ts';
 import { formatZodPath } from './format-zod-path.ts';
@@ -16,7 +16,7 @@ if (!inputPath || process.argv.length > 4) {
 	process.exit(2);
 }
 
-const registryResult = await t(() => loadDataFile(inputPath));
+const registryResult = await t(() => parseJsonFile(inputPath));
 
 if (!registryResult.ok) {
 	console.error('Unable to load registry.');
