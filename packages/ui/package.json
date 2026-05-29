@@ -9,9 +9,7 @@
 		}
 	},
 	"scripts": {
-		"check": "svelte-check --tsconfig ./tsconfig.json",
-		"lint": "eslint --fix .",
-		"fmt": "prettier --write ."
+		"check": "svelte-check --tsconfig ./tsconfig.json"
 	},
 	"peerDependencies": {
 		"svelte": "^5.0.0"

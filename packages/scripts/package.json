@@ -13,9 +13,7 @@
 		"lint-registry": "node ./src/lint-registry.ts",
 		"format-registry": "node ./src/format-registry.ts",
 		"validate-manifest": "node ./src/validate-manifest.ts",
-		"check": "tsc --noEmit",
-		"lint": "eslint --fix .",
-		"fmt": "prettier --write ."
+		"check": "tsc --noEmit"
 	},
 	"dependencies": {
 		"@dockyardmods/core": "workspace:*",

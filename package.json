@@ -15,14 +15,14 @@
 		"check:ui": "pnpm --filter @dockyardmods/ui check",
 		"check:core": "pnpm --filter @dockyardmods/core check",
 		"check:scripts": "pnpm --filter @dockyardmods/scripts check",
-		"lint:web": "pnpm --filter @dockyardmods/website lint",
-		"lint:ui": "pnpm --filter @dockyardmods/ui lint",
-		"lint:core": "pnpm --filter @dockyardmods/core lint",
-		"lint:scripts": "pnpm --filter @dockyardmods/scripts lint",
-		"fmt:web": "pnpm --filter @dockyardmods/website fmt",
-		"fmt:ui": "pnpm --filter @dockyardmods/ui fmt",
-		"fmt:core": "pnpm --filter @dockyardmods/core fmt",
-		"fmt:scripts": "pnpm --filter @dockyardmods/scripts fmt"
+		"lint:web": "eslint --fix apps/website",
+		"lint:ui": "eslint --fix packages/ui",
+		"lint:core": "eslint --fix packages/core",
+		"lint:scripts": "eslint --fix packages/scripts",
+		"fmt:web": "prettier --write apps/website",
+		"fmt:ui": "prettier --write packages/ui",
+		"fmt:core": "prettier --write packages/core",
+		"fmt:scripts": "prettier --write packages/scripts"
 	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",

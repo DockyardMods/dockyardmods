@@ -11,9 +11,7 @@
 		"./schemas/mod-manifest.schema.json": "./schemas/mod-manifest.schema.json"
 	},
 	"scripts": {
-		"check": "tsc --noEmit",
-		"lint": "eslint --fix .",
-		"fmt": "prettier --write ."
+		"check": "tsc --noEmit"
 	},
 	"dependencies": {
 		"try": "^1.0.3",
