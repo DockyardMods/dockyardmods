@@ -38,6 +38,6 @@ pnpm format
 
 ```sh
 pnpm --filter @dockyardmods/scripts generate:schemas
-pnpm --filter @dockyardmods/scripts lint-registry /path/to/registry.json
+pnpm --filter @dockyardmods/scripts validate-registry /path/to/registry.json
 pnpm --filter @dockyardmods/scripts format-registry /path/to/registry.json
 ```
