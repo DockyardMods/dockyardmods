@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 
 import { writeFile } from 'node:fs/promises';
-import { formatRegistry, loadDataFile, registrySchema } from '@dockyardmods/core';
+import { loadDataFile, registrySchema } from '@dockyardmods/core';
 import { t } from 'try';
+import { formatRegistry } from './format-registry-content.ts';
 import { formatZodPath } from './format-zod-path.ts';
 
 const inputPath = process.argv[2];

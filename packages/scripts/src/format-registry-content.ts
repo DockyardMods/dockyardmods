@@ -1,6 +1,11 @@
+import type { DockyardModRegistry } from '@dockyardmods/core';
 import { t } from 'try';
-import type { DockyardModRegistry } from '../types.ts';
 
+/**
+ * Formats a registry for deterministic file output.
+ *
+ * @throws When the registry cannot be serialized.
+ */
 export const formatRegistry = (registry: DockyardModRegistry): string => {
 	const sortedRegistry: DockyardModRegistry = {
 		...registry,

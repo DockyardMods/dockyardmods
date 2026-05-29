@@ -2,7 +2,7 @@
 
 ## Overview
 
-`packages/scripts` contains executable CLI entry points for Dockyard Mods registry and manifest maintenance. The scripts should stay thin and delegate domain behavior to `@dockyardmods/core`. The registry is a JSON registry maintained at <https://github.com/DockyardMods/the-dockyard>. Mod manifests are YAML manifests; see <https://github.com/DockyardMods/mod-submission> for an example.
+`packages/scripts` contains executable CLI entry points for Dockyard Mods registry and manifest maintenance. The scripts should stay thin and delegate shared domain behavior to `@dockyardmods/core`; script-only file operations and formatting can live here. The registry is a JSON registry maintained at <https://github.com/DockyardMods/the-dockyard>. Mod manifests are YAML manifests; see <https://github.com/DockyardMods/mod-submission> for an example.
 
 - `src/validate-registry.ts` runs registry validation and reports issues.
 - `src/format-registry.ts` formats registry files.
