@@ -4,13 +4,13 @@
 	"version": "0.0.0",
 	"type": "module",
 	"bin": {
-		"dockyard-lint-registry": "./src/lint-registry.ts",
+		"dockyard-validate-registry": "./src/validate-registry.ts",
 		"dockyard-format-registry": "./src/format-registry.ts",
 		"dockyard-validate-manifest": "./src/validate-manifest.ts"
 	},
 	"scripts": {
 		"generate:schemas": "node ./src/generate-json-schemas.ts",
-		"lint-registry": "node ./src/lint-registry.ts",
+		"validate-registry": "node ./src/validate-registry.ts",
 		"format-registry": "node ./src/format-registry.ts",
 		"validate-manifest": "node ./src/validate-manifest.ts",
 		"check": "tsc --noEmit"

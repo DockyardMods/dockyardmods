@@ -44,4 +44,4 @@ jobs:
         working-directory: dockyardmods-tooling
         env:
           REGISTRY_PATH: ${{ github.workspace }}/${{ inputs.registry_path }}
-        run: node packages/scripts/src/lint-registry.ts "$REGISTRY_PATH"
+        run: node packages/scripts/src/validate-registry.ts "$REGISTRY_PATH"

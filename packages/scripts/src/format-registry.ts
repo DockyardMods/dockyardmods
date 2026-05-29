@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 
 import { writeFile } from 'node:fs/promises';
-import { formatRegistry, lintRegistry, parseRegistry, loadDataFile } from '@dockyardmods/core';
+import { formatRegistry, loadDataFile, registrySchema } from '@dockyardmods/core';
 import { t } from 'try';
+import { formatZodPath } from './format-zod-path.ts';
 
 const inputPath = process.argv[2];
 const outputPath = process.argv[3] ?? inputPath;
@@ -22,33 +23,19 @@ if (!registryResult.ok) {
 	process.exit(2);
 }
 
-const lintResult = t(() => lintRegistry(registryResult.value));
+const validationResult = registrySchema.safeParse(registryResult.value);
 
-if (!lintResult.ok) {
-	console.error('Unable to validate registry.');
-	console.error(lintResult.error);
-	process.exit(2);
-}
-
-if (!lintResult.value.ok) {
+if (!validationResult.success) {
 	console.error('Registry validation failed:');
 
-	for (const issue of lintResult.value.issues) {
-		console.error(`${issue.path || '/'}: ${issue.message}`);
+	for (const issue of validationResult.error.issues) {
+		console.error(`${formatZodPath(issue.path) || '/'}: ${issue.message}`);
 	}
 
 	process.exit(1);
 }
 
-const parseResult = t(() => parseRegistry(registryResult.value));
-
-if (!parseResult.ok) {
-	console.error('Unable to parse registry.');
-	console.error(parseResult.error);
-	process.exit(2);
-}
-
-const formatted = formatRegistry(parseResult.value);
+const formatted = formatRegistry(validationResult.data);
 const writeResult = await t(() => writeFile(outputPath, formatted));
 
 if (!writeResult.ok) {

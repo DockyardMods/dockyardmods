@@ -3,7 +3,6 @@ export { loadText } from './data-file/load-text.ts';
 export { parseManifest } from './manifest/parse-manifest.ts';
 export { parseManifestFile } from './manifest/parse-manifest-file.ts';
 export { formatRegistry } from './registry/format-registry.ts';
-export { lintRegistry } from './registry/lint-registry.ts';
 export { parseRegistry } from './registry/parse-registry.ts';
 export { parseRegistryFile } from './registry/parse-registry-file.ts';
 export { certificationSchema } from './schemas/certification-schema.ts';
@@ -20,7 +19,5 @@ export type {
 	DockyardModManifest,
 	DockyardModMedia,
 	DockyardModPackage,
-	DockyardModRegistry,
-	RegistryLintIssue,
-	RegistryLintResult
+	DockyardModRegistry
 } from './types.ts';

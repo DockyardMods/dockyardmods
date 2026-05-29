@@ -14,19 +14,3 @@ export type DockyardModManifest = z.infer<typeof modManifestSchema>;
 export type DockyardModMedia = z.infer<typeof modMediaSchema>;
 export type DockyardModPackage = z.infer<typeof modPackageSchema>;
 export type DockyardModRegistry = z.infer<typeof registrySchema>;
-
-export type RegistryLintIssue = {
-	code:
-		| 'duplicate-mod-id'
-		| 'duplicate-repo'
-		| 'invalid-certification-expires-at'
-		| 'invalid-registry-schema';
-	message: string;
-	path: string;
-	value?: unknown;
-};
-
-export type RegistryLintResult = {
-	ok: boolean;
-	issues: RegistryLintIssue[];
-};
