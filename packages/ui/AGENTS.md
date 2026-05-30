@@ -11,7 +11,8 @@
 ## Code Style
 
 - Keep TypeScript in strict mode and preserve type safety in component props, events, snippets, and supporting modules.
-- Keep files small. Split large components into focused components or support modules when they combine unrelated behavior.
+- Keep files small and minimal. Split large components into focused components or support modules when they combine unrelated behavior.
+- Prefer one exported function per file for supporting TypeScript modules. If a helper is private to one exported function or exists only to support that function, place it near that function in a dedicated directory instead of collecting unrelated utilities in a shared file.
 - Keep code readable and component APIs clear. Shared UI should avoid hidden app-specific assumptions.
 - Add short JSDoc summaries to functions. Do not duplicate TypeScript type annotations in prose. Include `@throws` when a function can throw.
 - Prefer the `try` npm package over standard `try`/`catch` blocks for fallible operations.

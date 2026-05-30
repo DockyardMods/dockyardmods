@@ -12,7 +12,8 @@
 ## Code Style
 
 - Keep TypeScript in strict mode and preserve type safety for CLI arguments, process exits, and core package results.
-- Keep files small. Add shared CLI helpers when multiple entry points need the same argument parsing or output behavior.
+- Keep files small and minimal. Add shared CLI helpers when multiple entry points need the same argument parsing or output behavior.
+- Prefer one exported function per file. If a helper is private to one exported function or exists only to support that function, place it near that function in a dedicated directory instead of collecting unrelated utilities in a shared file.
 - Keep code readable and operationally explicit. CLI files should make inputs, outputs, and exit behavior clear.
 - Add short JSDoc summaries to functions. Do not duplicate TypeScript type annotations in prose. Include `@throws` when a function can throw.
 - Prefer the `try` npm package over standard `try`/`catch` blocks for fallible operations.

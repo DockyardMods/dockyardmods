@@ -12,7 +12,8 @@ Dockyard Mods is a pnpm monorepo for the Dockyard Mods website and shared toolin
 ## Code Style
 
 - Keep TypeScript in strict mode and preserve type safety. Prefer code that TypeScript can fully check over dynamic or loosely typed shortcuts.
-- Keep files small. Split code into focused files and directories when a module starts mixing responsibilities.
+- Keep files small and minimal. Prefer more small, focused files over fewer large files, and split code into directories when a module starts mixing responsibilities.
+- Prefer one exported function per file. If a helper is private to one exported function or exists only to support that function, place it near that function in a dedicated directory instead of collecting unrelated utilities in a shared file.
 - Optimize for readable code: clear names, direct control flow, and straightforward module boundaries.
 - Add short JSDoc summaries to functions. Do not duplicate TypeScript type annotations in prose. Include `@throws` when a function can throw.
 - Prefer the `try` npm package over standard `try`/`catch` blocks for fallible operations.
