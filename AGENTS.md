@@ -21,7 +21,7 @@ Dockyard Mods is a pnpm monorepo for the Dockyard Mods website and shared toolin
 
 - Use `pnpm` for package scripts and dependency management.
 - Use `mise` for local tool versions.
-- Run the relevant workspace checks before handing off changes, for example `pnpm --filter @dockyardmods/core check` or `pnpm --filter @dockyardmods/website check`.
+- Run the relevant workspace linting, formatting, and checking before handing off changes, for example `pnpm --filter @dockyardmods/core lint`, `pnpm --filter @dockyardmods/core format`, and `pnpm --filter @dockyardmods/core check`.
 
 ## Validation Boundaries
 
