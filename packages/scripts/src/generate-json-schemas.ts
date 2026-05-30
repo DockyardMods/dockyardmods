@@ -3,7 +3,11 @@
 import { mkdir, writeFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { modManifestSchema, registrySchema } from '@dockyardmods/core/schemas';
+import {
+	modManifestSchema,
+	registrySchema,
+	resolvedEcosystemSchema
+} from '@dockyardmods/core/schemas';
 import { format, resolveConfig } from 'prettier';
 import { t } from 'try';
 import { z } from 'zod';
@@ -73,6 +77,7 @@ const writeSchema = async (fileName: string, schema: z.ZodType): Promise<void> =
 const result = await t(async () => {
 	await writeSchema('registry.schema.json', registrySchema);
 	await writeSchema('mod-manifest.schema.json', modManifestSchema);
+	await writeSchema('ecosystem-snapshot.schema.json', resolvedEcosystemSchema);
 });
 
 if (!result.ok) {

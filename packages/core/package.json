@@ -10,7 +10,8 @@
 		"./manifest": "./src/manifest/index.ts",
 		"./schemas": "./src/schemas/index.ts",
 		"./schemas/registry.schema.json": "./schemas/registry.schema.json",
-		"./schemas/mod-manifest.schema.json": "./schemas/mod-manifest.schema.json"
+		"./schemas/mod-manifest.schema.json": "./schemas/mod-manifest.schema.json",
+		"./schemas/ecosystem-snapshot.schema.json": "./schemas/ecosystem-snapshot.schema.json"
 	},
 	"scripts": {
 		"check": "tsc --noEmit"
