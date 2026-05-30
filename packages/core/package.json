@@ -8,6 +8,7 @@
 		"./ecosystem": "./src/ecosystem/index.ts",
 		"./registry": "./src/registry/index.ts",
 		"./manifest": "./src/manifest/index.ts",
+		"./schemas": "./src/schemas/index.ts",
 		"./schemas/registry.schema.json": "./schemas/registry.schema.json",
 		"./schemas/mod-manifest.schema.json": "./schemas/mod-manifest.schema.json"
 	},

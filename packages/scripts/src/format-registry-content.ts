@@ -1,4 +1,4 @@
-import type { DockyardModRegistry } from '@dockyardmods/core';
+import type { DockyardModRegistry } from '@dockyardmods/core/registry';
 import { t } from 'try';
 
 /**

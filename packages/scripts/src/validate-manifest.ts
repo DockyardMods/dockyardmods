@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { parseManifestFile } from '@dockyardmods/core';
+import { parseManifestFile } from '@dockyardmods/core/manifest';
 import { t } from 'try';
 
 const manifestPath = process.argv[2];
