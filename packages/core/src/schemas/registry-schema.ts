@@ -1,6 +1,5 @@
 import { z } from 'zod';
 import { gameVersionId } from './constants/game-version-id.ts';
-import { nonEmptyString } from './constants/non-empty-string.ts';
 import { modEntrySchema } from './mod-entry-schema.ts';
 import { type DockyardModEntry } from '../types.ts';
 
@@ -33,13 +32,16 @@ const addDuplicateModFieldIssues = (
 	}
 };
 
-export const registrySchema = z
+export const registryBaseSchema = z
 	.strictObject({
 		$schema: z.literal(registrySchemaUrl),
 		version: z.literal(1),
 		currentGameVersionId: gameVersionId,
 		mods: z.array(modEntrySchema)
 	})
+	.meta({ title: 'Dockyard Mod Registry' });
+
+export const registrySchema = registryBaseSchema
 	.superRefine((registry, ctx) => {
 		addDuplicateModFieldIssues(registry.mods, 'id', 'Duplicate mod id found', ctx);
 		addDuplicateModFieldIssues(registry.mods, 'repo', 'Duplicate repo URL found', ctx);
