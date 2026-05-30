@@ -35,6 +35,10 @@
 			"exclusiveMinimum": 0,
 			"maximum": 9007199254740991
 		},
+		"icon": {
+			"type": "string",
+			"minLength": 1
+		},
 		"packages": {
 			"minItems": 1,
 			"type": "array",
@@ -130,6 +134,7 @@
 		"version",
 		"authors",
 		"gameVersionId",
+		"icon",
 		"packages"
 	],
 	"additionalProperties": false,
