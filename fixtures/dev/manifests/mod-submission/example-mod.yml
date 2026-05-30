@@ -2,6 +2,7 @@
 manifestVersion: 1
 
 # Core
+id: mod-submission
 name: Mod submission
 version: 1.1.0
 authors:
@@ -30,7 +31,7 @@ changelog: |
 
 # Meta info
 license: MIT
-gameVersionId: "12267945"
+gameVersionId: 12267945
 tags:
   - ui
   - utility
