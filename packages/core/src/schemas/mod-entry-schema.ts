@@ -1,16 +1,16 @@
 import { z } from 'zod';
 import { certificationSchema } from './certification-schema.ts';
 import { dockyardRepoRegex } from './constants/dockyard-repo-regex.ts';
+import { gitCommitShaRegex } from './constants/git-commit-sha-regex.ts';
 import { modIdRegex } from './constants/mod-id-regex.ts';
-import { nonEmptyString } from './constants/non-empty-string.ts';
+import { relativeRepoPath } from './constants/relative-repo-path.ts';
 
 export const modEntrySchema = z
 	.strictObject({
 		id: z.string().regex(modIdRegex),
-		version: nonEmptyString,
 		repo: z.string().regex(dockyardRepoRegex),
-		manifestPath: nonEmptyString,
-		gameVersionId: nonEmptyString,
+		manifestPath: relativeRepoPath,
+		ref: z.string().regex(gitCommitShaRegex, 'ref must be a full 40-character git commit SHA'),
 		certification: certificationSchema.optional()
 	})
 	.meta({ title: 'Dockyard Mod Entry' });

@@ -22,3 +22,10 @@ Dockyard Mods is a pnpm monorepo for the Dockyard Mods website and shared toolin
 - Use `pnpm` for package scripts and dependency management.
 - Use `mise` for local tool versions.
 - Run the relevant workspace checks before handing off changes, for example `pnpm --filter @dockyardmods/core check` or `pnpm --filter @dockyardmods/website check`.
+
+## Validation Boundaries
+
+- `@dockyardmods/core` exposes the app-facing Zod contracts for registry and manifest parsing.
+- Zod schemas should cover single-object shape checks, required fields, string formats, URLs, checksums, dates, safe relative paths, and object-local `superRefine` checks.
+- Maintenance scripts should handle checks that require more than one parsed object or external state, such as registry-to-manifest ID matching, pinned manifest existence, package downloads, checksum verification, media existence, and certification expiry.
+- Do not manually edit generated JSON Schema artifacts when changing Zod contracts unless that generation is explicitly requested.

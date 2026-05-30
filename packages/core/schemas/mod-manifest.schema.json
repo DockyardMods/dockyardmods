@@ -6,6 +6,10 @@
 			"type": "integer",
 			"const": 1
 		},
+		"id": {
+			"type": "string",
+			"pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+		},
 		"name": {
 			"type": "string",
 			"minLength": 1
@@ -27,8 +31,9 @@
 			}
 		},
 		"gameVersionId": {
-			"type": "string",
-			"minLength": 1
+			"type": "integer",
+			"exclusiveMinimum": 0,
+			"maximum": 9007199254740991
 		},
 		"packages": {
 			"minItems": 1,
@@ -119,6 +124,7 @@
 	},
 	"required": [
 		"manifestVersion",
+		"id",
 		"name",
 		"summary",
 		"version",

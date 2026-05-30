@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { gameVersionId } from './constants/game-version-id.ts';
 import { nonEmptyString } from './constants/non-empty-string.ts';
 import { modEntrySchema } from './mod-entry-schema.ts';
 import { type DockyardModEntry } from '../types.ts';
@@ -36,7 +37,7 @@ export const registrySchema = z
 	.strictObject({
 		$schema: z.literal(registrySchemaUrl),
 		version: z.literal(1),
-		currentGameVersionId: nonEmptyString,
+		currentGameVersionId: gameVersionId,
 		mods: z.array(modEntrySchema)
 	})
 	.superRefine((registry, ctx) => {
